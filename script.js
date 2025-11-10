@@ -1,7 +1,7 @@
 //your JS code here. If required.
 let form = document.querySelector('form');
-let name = document.querySelector('#name');
-let age = document.querySelector('#age');
+let nameInp = document.querySelector('#name');
+let ageInp = document.querySelector('#age');
 
 function promise(name,age){
 	return new Promise((res,rej)=>{
@@ -21,11 +21,11 @@ function promise(name,age){
 }
 form.addEventListener('submit',(e)=>{
 	e.preventDefault();
-	if(name.value='' || age.value==''){
+	if(nameInp.value=='' || ageInp.value==''){
 		alert('Please enter valid details');
 		return;
 	}
-	promise(name.value,age.value)
+	promise(nameInp.value,ageInp.value)
 	.then(data=>{
 		alert(data);
 	})
